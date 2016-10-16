@@ -1,13 +1,38 @@
-<head>
-  <title>FriendZone</title>
-</head>
+<template name="nav">
+	<header>
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#acolapsar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="http://localhost:3000/" class="navbar-brand">FriendZone</a>
+				</div>
+				<div class="collapse navbar-collapse" id="acolapsar">
+					<ul class="nav navbar-nav">
+						<li><a href="http://localhost:3000/"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
+						<li><a href="http://localhost:3000/contact"><span class="glyphicon glyphicon-earphone"></span>Contact</a></li>
+						<li><a href="http://localhost:3000/about"><span class="glyphicon glyphicon-sunglasses"></span>About</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+      					
+      					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> {{>loginButtons align="right"}}  </a></li>
+    				</ul>
+				</div>
+				
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="background">
+		{{>Template.dynamic template=main}}
+	
+	</div>
+	</main>
+	
 
-<body>
-  <div>
-    {{>nav}}
-    {{>form}}
-    {{>slide}}
-  </div>
-</body>
-
+</template>
 
