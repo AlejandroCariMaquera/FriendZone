@@ -31,8 +31,8 @@ body{
 	text-shadow: 5px 3px 1px #000000;
 }
 .container{
-	float: left;
-	width: auto;
-	height:auto;
-
+	
+	width: 1200px;
+	height:400px;
 }
+
