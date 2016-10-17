@@ -8,12 +8,13 @@ body{
 }
 .panelStyles{
 	float: right;
-	margin:auto;
 	width:25%;
-	margin-right: 10%;
+	opacity:0.9;
+	margin-right: 20%;
+	margin-top: 5%;
 	background-color:#F7FFF9;
 	border-radius: 50px 0px 50px 0px;
-	box-shadow: 20px 20px 16px #1F4E26;
+	
 }
 .panel-heading{
 	background-color: #68b12f;
@@ -30,9 +31,12 @@ body{
 	color: #ECF6EE;
 	text-shadow: 5px 3px 1px #000000;
 }
-.container{
-	
-	width: 1200px;
-	height:400px;
+
+.carousel-caption{
+	color: red;
+	text-align: left;
+}
+.contenedor{
+	float: left;
 }
 
