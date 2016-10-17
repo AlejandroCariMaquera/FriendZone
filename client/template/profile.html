@@ -1,75 +1,79 @@
 <template name="profile">
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Friend Zone</a>
-			</div>
-	
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Buscar amigos">
-					</div>
-					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-				</form>
-				
-				<ul class="nav navbar-nav navbar-right">
+	{{# if currentUser}}
+	<div class="panel panel-default" style="position: absolute; width: 100%; height: 100%; top: 0px; z-index: 1;">
+		<div class="panel-body">
+					<nav class="navbar navbar-inverse" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 					
-					<ul class="nav navbar-nav">
+								<a class="navbar-brand" href="#"> Friend Zone </a>
 						
-						<li class="active"><a href="#"><span class="glyphicon glyphicon-globe"></span> Noticias </a></li>
-						<li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Amigos </a></li>
-						<li class="active"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Mensajes </a></li>
-						<li class="active"><a href="#"><span class="glyphicon glyphicon-bell"></span> Notificaciones </a></li>
-					</ul>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Cuenta <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Configuracion</a></li>
-							<li><a href="#">Salir</a></li>
-							<li><a href="#">Ayuda</a></li>
-							<li><a href="#">Reportar un problema</a></li>
+						
+					</div>
+			
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Buscar amigos">
+							</div>
+							<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+						</form>
+						
+						<ul class="nav navbar-nav navbar-right">
+							
+							<ul class="nav navbar-nav">
+								
+								<li class="active"><a href="#"><span class="glyphicon glyphicon-globe"></span> Noticias </a></li>
+								<li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Amigos </a></li>
+								<li class="active"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Mensajes </a></li>
+								<li class="active"><a href="#"><span class="glyphicon glyphicon-bell"></span> Notificaciones </a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+      							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> {{>loginButtons align="right"}}  </a></li>
+      							
+    						</ul>
 						</ul>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
+					</div><!-- /.navbar-collapse -->
+				</div>
+			</nav>
+			<div class="row">
+			  <div class="col-sm-2">
+			  	<div class="foto">
+			  		<h2>Mi Perfil</h2>
+			  		<img src="/img/usuario.png">
+			  		<ul>
+			  			<li>
+			  				<h5><span class="glyphicon glyphicon-user"></span></h5>
+			  			</li>
+			  			<li>
+			  				<h5><span class="glyphicon glyphicon-home"></span></h5>
+			  			</li>
+			  			<li>
+			  				<h5><span class="glyphicon glyphicon-earphone"></span></h5>
+			  			</li>
+			  		</ul>
+			  	</div>
+			  </div>
+			  <div class="col-sm-7">
+			  	<div class="post">
+			  		<form>
+			  			<input type="text" class="form-control" placeholder="¿Que estas pensando?">
+			  			<button type="button" class="btn btn-primary">Publicar</button>
+			  		</form>
+			  	</div>
+			  </div>
+			  <div class="col-sm-3">.col-sm-4</div>
+			</div>
 		</div>
-	</nav>
-	<div class="row">
-	  <div class="col-sm-2">
-	  	<div class="foto">
-	  		<h2>Mi Perfil</h2>
-	  		<img src="/img/usuario.png">
-	  		<ul>
-	  			<li>
-	  				<h5><span class="glyphicon glyphicon-user"></span></h5>
-	  			</li>
-	  			<li>
-	  				<h5><span class="glyphicon glyphicon-home"></span></h5>
-	  			</li>
-	  			<li>
-	  				<h5><span class="glyphicon glyphicon-earphone"></span></h5>
-	  			</li>
-	  		</ul>
-	  	</div>
-	  </div>
-	  <div class="col-sm-7">
-	  	<div class="post">
-	  		<form>
-	  			<input type="text" class="form-control" placeholder="¿Que estas pensando?">
-	  			<button type="button" class="btn btn-primary">Publicar</button>
-	  		</form>
-	  	</div>
-	  </div>
-	  <div class="col-sm-3">.col-sm-4</div>
 	</div>
+	{{/if}}
 </template>

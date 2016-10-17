@@ -77,8 +77,8 @@ body{
 	text-align: center;
 	 
 }
- .navbar-collapse{
- 	border: 2px solid black;
+ .navbar-collapse1{
+ 	
 	background-color: #323531  ;
 	border-radius: 50px;
 	color: red;
@@ -120,4 +120,8 @@ body{
 .img-circle{
 	width: 100px;
 	height: 50px;
+}
+.panel-body{
+	background: url("/img/presence.png");
+	height: 150%;
 }
