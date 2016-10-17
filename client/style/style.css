@@ -52,5 +52,22 @@ body{
 .contenedor h1{
 	font-size: 45px;
 }
+.navbar-nav li{
+	border: 2px solid black;
+	background-color: #323531  ;
+	border-radius: 50px;
+	color: red;
+}
+.navbar-nav li:hover{
+	border: 2px solid #26B7A1;
+	border-radius: 50px;
+	background-color: #26B7A1;
+}
+.container-fluid{
+	border: 2px solid black;
+	background-color: #323531  ;
+	border-radius: 20px;
+}
+
 
 
