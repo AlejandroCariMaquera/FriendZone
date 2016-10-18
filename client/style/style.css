@@ -125,3 +125,7 @@ body{
 	background: url("/img/presence.png");
 	height: 150%;
 }
+ #footer .panel2 ul li{
+ 	display:inline;
+ }
+ 

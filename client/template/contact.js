@@ -7,8 +7,8 @@ Template.contact.events({
 	}
 });
 Template.contact.onRendered( function(){
-	$("#contacto").hide();
-	$("#contacto").show('slow', function() {
+	$("#contact").hide();
+	$("#contact").show('slow', function() {
 		
 	});
 });
