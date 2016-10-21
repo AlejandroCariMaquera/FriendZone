@@ -8,27 +8,31 @@
 		<div class="panel-body">
 			<form action="" method="POST" role="form">
 				<div class="form-group">
+					
+
 					<label form="">Nombre</label>
-					<input type="text" class="form-control" id="" placeholder="Nombre Completo">
+					<input class="form-control input-sm" id="signup-username" placeholder="Nombre">
 					<label form="">Apellidos</label>
-					<input type="text" class="form-control" id="" placeholder="Paterno Materno">
-					<label for="">Email</label>
-					<input type="email" class="form-control" id="" placeholder="email@email.com">
-					<label for="">Password</label>
-					<input type="password" class="form-control" id="" placeholder="Password">
-					<label for="">Re. Password</label>
-					<input type="password" class="form-control" id="" placeholder="Re. Password">
+        		 	<input class="form-control input-sm" id="signup-fullname" placeholder="Apellido)">
+        		 	<label for="">Email</label>
+         			<input type="email" name="" id="signup-email" class="form-control" value="" required="required" title="" placeholder="Email">
+         			<label for="">Password</label>
+         			<input class="form-control input-sm" id="signup-password" placeholder="Password" type="password">
 					
 				</div>
 				<div class="g-recaptcha" data-sitekey="6LftawkUAAAAAPvwAnXpUkvuSVRcDeQpkoOGarSz" data-theme="light"></div>
-				<button type="button" class="btn btn-warning">Registrate en FriendZone</button>
-				</form>
+				<button type="button" class="btn btn-warning" id="signup">Registrate en FriendZone</button>
+			</form>
 			
 		</div>	
 	</div>	
+
 	{{>slide}}
-	{{>footer}}
+	
 	{{>profile}}
+	<footer>
+		{{>footer}}
+	</footer>
 
 	 
 </template>

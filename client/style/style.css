@@ -23,6 +23,9 @@ body{
 	opacity:0.9;
 	border-radius: 50px 0px 0px 0px;
 }
+.panel-body{
+	border-radius: 0px 0px 50px 0px;
+}
 .panel-heading h1{
 	color: #ECF6EE;
 	text-shadow: 5px 3px 1px #000000;
@@ -52,14 +55,13 @@ body{
 .contenedor h1{
 	font-size: 45px;
 }
-.navbar-nav li{
+#a{
 	border: 2px solid black;
-	background-color: #323531  ;
 	border-radius: 50px;
-	color: red;
+	background-color: #323531;
 }
-.navbar-nav li:hover{
-	border: 2px solid #26B7A1;
+#a:hover{
+	border: 2px solid black;
 	border-radius: 50px;
 	background-color: #26B7A1;
 }

@@ -13,14 +13,20 @@
 					<img class="img-circle" src="/img/logo.jpg" alt="">
 				</div>
 				<div class="collapse navbar-collapse" id="acolapsar">
-					<ul class="nav navbar-nav">
-						<li><a href="http://localhost:3000/"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
-						<li><a href="http://localhost:3000/contact"><span class="glyphicon glyphicon-earphone"></span>Contacto</a></li>
-						<li><a href="http://localhost:3000/about"><span class="glyphicon glyphicon-sunglasses"></span>Quienes Somos</a></li>
+					<ul class="nav navbar-nav" >
+						<li id="a" ><a href="http://localhost:3000/"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
+						<li id="a"><a href="http://localhost:3000/contact"><span class="glyphicon glyphicon-earphone"></span>Contacto</a></li>
+						<li id="a"><a href="http://localhost:3000/about"><span class="glyphicon glyphicon-sunglasses"></span>Quienes Somos</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+						<li ><a href=""><input class="form-control input-sm" id="login-username" placeholder="Username" style="position: right ; width: 100px; "></a></li>
+
+						<li><a href=""><input class="form-control input-sm" id="login-password" placeholder="Password" type="password" style="position: right ; width: 100px; "></a></li>
+
+						<li><a href=""> <button type="button" class="btn btn-info fullbutton login" id="login">Acceder</button></a></li>
+					     
       					
-      					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> {{>loginButtons align="right"}}  </a></li>
+      					
     				</ul>
 				</div>
 				
@@ -33,7 +39,5 @@
 	
 	</div>
 	</main>
-	
-
 </template>
 
