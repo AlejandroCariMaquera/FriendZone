@@ -46,36 +46,24 @@
 				</div>
 			</nav>
 			<div class="row">
-			  <div class="col-sm-2">
-			  	<div class="foto">
-			  		<h2>Mi Perfil</h2>
-			  		<img src="/img/usuario.png">
-			  		<ul>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-user"></span></h5>
-			  			</li>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-home"></span></h5>
-			  			</li>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-earphone"></span></h5>
-			  			</li>
-			  		</ul>
-			  	</div>
-			  </div>
-			  <div class="col-sm-7">
-			  	<div class="post">
-			  		<form>
-			  			<input type="text" class="form-control" placeholder="¿Que estas pensando?">
-			  			<button type="button" class="btn btn-primary">Publicar</button>
-			  		</form>
-			  	</div>
-			  </div>
-			  <div class="col-sm-3">.col-sm-4</div>
+				<div class="col-sm-2">
+					{{> perfil}} 
+				</div>
+				<div class="col-sm-7"> 
+				<ul>
+					<li>
+						{{> muro}}
+					</li>
+					<li>
+						{{> muroMsn}}
+					</li>
+				</ul>
+				</div>
+				<div class="col-sm-3">.col-sm-4</div>
 			</div>
+			
 		</div>
-	</div>
 
-	{{/if}}
-	 
+	</div>
+	{{/if}}	 
 </template>
