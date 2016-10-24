@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor';
  
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  Meteor.publish("getArticles", function(id){
+  	return ARTICLE.find({user:id});
+  });
 });
 

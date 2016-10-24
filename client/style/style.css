@@ -6,9 +6,19 @@ body{
 	
   background: url("/img/presence.png");
 }
+
+
+.fondo0{
+background: url("/img/friend1.jpg");	
+}
+.fondo1{
+	background: url("/img/friend2.jpg");
+}
+.fondo2{
+	background: url("/img/friend3.jpg");
+}
 .panelStyles{
 	float: right;
-	width:25%;
 	opacity:0.9;
 	margin-right: 20%;
 	margin-top: 5%;
@@ -44,7 +54,7 @@ body{
 	color: white;
 	font-family: verdana;
 	font-size: 2em;
-	width:40%;
+
 	text-shadow: 2px 3px 1px #000000;
 	
 	margin-right: 20%;

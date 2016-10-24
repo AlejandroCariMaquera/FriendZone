@@ -1,11 +1,27 @@
 <template name="muro">
-	<div class="post">
+	<div class="post" id="mainForm">
 		<form>
-			<input type="text" class="form-control" placeholder="¿Que estas pensando?">
-			<button type="button" class="btn btn-primary">Publicar</button>
+			<textarea name="message" id="input" class="form-control" rows="3" placeholder="¿Que estas pensando?" style="width:100%;"></textarea>
+			<button type="submit" class="btn btn-primary">Publicar</button>
 		</form>
 	</div>
+
 </template>
 <template name="muroMsn">
-	
+	{{# if isReady}}
+	<ul>
+		{{#each items}}
+		<li>
+			{{> ArticlesView}}
+		</li>	
+		{{/each}}
+	</ul>	
+	{{else}}
+		<b>CARGANDO ....</b>
+	{{/if}}
+</template>
+<template name="ArticlesView">
+	<div>
+		{{msn}}
+	</div>
 </template>
