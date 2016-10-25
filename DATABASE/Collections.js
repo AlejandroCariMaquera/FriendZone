@@ -4,7 +4,7 @@ ARTICLE = new Mongo.Collection("articles");
 
 ARTICLE.allow({
 	insert:function(userId,params){
-		return !!userId
+		return userId
 	}
 });
 

@@ -6,7 +6,9 @@ body{
 	
   background: url("/img/presence.png");
 }
-
+ul{
+	list-style:none; 
+}
 
 .fondo0{
 background: url("/img/friend1.jpg");	
