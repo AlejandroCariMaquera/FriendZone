@@ -1,4 +1,19 @@
-
+/*PUBLICACIONES=[
+  {text:"estoy trizte",date:new Date()},
+  {text:"estoy de viaje", date:new Date()},
+  {text:"estoy aburrido",date:new Date()}
+]*/
+Template.profile.helpers({
+	DATOS:POSTS.find()
+});
+Template.profile.events({
+	"click #btnsend":function(e){
+		e.preventDefault();
+		var r=$("#formregister").serializeObject();
+		console.log(r);
+	}
+	
+});
   Template.form.events({
     'click #signup': function() {
       var user = {
