@@ -74,9 +74,13 @@
 			  			</li>
 			  			{{/each}}
 			  		</ul>
-			  		<form action="" id="formregister" method="POSTS">
-			  			<input type="text" class="form-control" placeholder="¿Que estas pensando?">
-			  			<button type="submit" id="btnsend" class="btn btn-primary">Publicar</button>
+			  		<form action="" method="POST" role="form" id="formpublic">
+			  			<legend>comentar</legend>
+			  				<div class="form-group">
+			  					<textarea name="comment" id="input" class="form-control" rows="2" required="required"></textarea>
+			  					<input type="text" name="fecha" id="jajaja" class="form-control" value=""  placeholder="" title="">
+			  				</div>
+			  				<button type="submit" id="btnsend" class="btn btn-primary">PUBLICAR</button>
 			  		</form>
 			  	</div>
 			  </div>

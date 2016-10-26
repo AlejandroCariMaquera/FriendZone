@@ -9,10 +9,13 @@ Template.profile.helpers({
 Template.profile.events({
 	"click #btnsend":function(e){
 		e.preventDefault();
-		var r=$("#formregister").serializeObject();
-		console.log(r);
+		var r=$("#formpublic").serializeObject();
+		POSTS.insert(r);
+    //console.log(r);
 	}
-	
+});
+Template.profile.onRendered(function(){
+    $("#jajaja").datepicker();
 });
   Template.form.events({
     'click #signup': function() {
