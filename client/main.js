@@ -14,9 +14,6 @@ Template.profile.events({
     //console.log(r);
 	}
 });
-Template.profile.onRendered(function(){
-    $("#jajaja").datepicker();
-});
   Template.form.events({
     'click #signup': function() {
       var user = {
@@ -33,9 +30,6 @@ Template.profile.onRendered(function(){
       });
     },
   });
-
-
-
 Template.form.onRendered(function(instance){
  
   setInterval(function(){

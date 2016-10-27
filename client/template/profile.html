@@ -66,23 +66,22 @@
 			  	</div>
 			  </div>
 			  <div class="col-sm-7">
-			  	<div class="post">
-			  		<ul>
-			  			{{#each DATOS}}
-			  			<li>
-			  				{{>item}}
-			  			</li>
-			  			{{/each}}
-			  		</ul>
-			  		<form action="" method="POST" role="form" id="formpublic">
-			  			<legend>comentar</legend>
-			  				<div class="form-group">
-			  					<textarea name="comment" id="input" class="form-control" rows="2" required="required"></textarea>
-			  					<input type="text" name="fecha" id="jajaja" class="form-control" value=""  placeholder="" title="">
-			  				</div>
+			  	<ul>
+			  		<li>
+			  			<form action="" method="POST" role="form" id="formpublic">
+			  				<legend>comentar</legend>
+			  					<div class="form-group">
+			  						<textarea name="text" id="input" class="form-control" rows="2" required="required"></textarea>
+			  					</div>
 			  				<button type="submit" id="btnsend" class="btn btn-primary">PUBLICAR</button>
-			  		</form>
-			  	</div>
+			  			</form>
+			  		</li>
+			  		{{#each DATOS}}
+			  		<li>
+			  			{{>item}}
+			  		</li>
+			  		{{/each}}
+			  	</ul>
 			  </div>
 			  <div class="col-sm-3">.col-sm-4</div>
 			</div>
@@ -93,11 +92,23 @@
 </template>
 <template name="item">
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">{{date}}</h3> 
-		</div>
 		<div class="panel-body">
-			{{text}}
+			<ul>
+				<li>
+					<span class="badge">{{date}}</span>
+				</li>
+				<li>
+					<div class="panel-body">
+						{{text}}
+					</div>
+				</li>
+				<li class="active">
+					<a href="#"><span class="glyphicon glyphicon-thumbs-up"> </span>Me gusta </a>
+					<a href="#"><span class="glyphicon glyphicon-comment"></span> Comentar </a>
+					<a href="#"><span class="glyphicon glyphicon-thumbs-down"></span> No me gusta </a>
+				</li>
+								
+			</ul>
 		</div>
 	</div>
 </template>
