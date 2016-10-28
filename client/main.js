@@ -78,3 +78,36 @@ Template.perfil.helpers({
     }
   }
 });
+//Codigo like dislike
+Template.item.onCreated(function helloOnCreated() {
+  // counter starts at 0
+  this.counter = new ReactiveVar(0);
+});
+Template.item.helpers({
+  counter() {
+    return Template.instance().counter.get();
+  },
+});
+Template.item.events({
+  'click #like'(event, instance) {
+    // increment the counter when button is clicked
+    instance.counter.set(instance.counter.get() + 1);
+  },
+});
+
+Template.item.onCreated(function helloOnCreated() {
+  // counter starts at 0
+  this.discounter = new ReactiveVar(0);
+});
+Template.item.helpers({
+  discounter() {
+    return Template.instance().discounter.get();
+  },
+});
+Template.item.events({
+  'click #dislike'(event, instance) {
+    // increment the counter when button is clicked
+    instance.discounter.set(instance.discounter.get() + 1);
+  },
+});
+//--------------------
