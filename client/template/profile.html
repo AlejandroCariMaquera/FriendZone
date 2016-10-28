@@ -53,19 +53,27 @@
 			  	<ul>
 			  		<li>
 			  			<form action="" method="POST" role="form" id="formpublic">
-			  				<legend>comentar</legend>
 			  					<div class="form-group">
+			  						<input type="hidden" value="{{URL}}" name="images">
 			  						<textarea name="text" id="input" class="form-control" rows="2" required="required"></textarea>
 			  					</div>
 			  				<button type="submit" id="btnsend" class="btn btn-primary">PUBLICAR</button>
 			  			</form>
 			  		</li>
-			  		{{#each DATOS}}
+			  		<br>
+			  		<li>
+						<p>subir imagenes</p>
+						<img src="{{URL}}" width="200px">
+			  			{{> upload_bootstrap }}
+			  		</li>
+			  		<br>
+			  		
+			  	</ul>
+			  	{{#each DATOS}}
 			  		<li>
 			  			{{>item}}
 			  		</li>
 			  		{{/each}}
-			  	</ul>
 			  </div>
 			  <div class="col-sm-3">.col-sm-4</div>
 			</div>
@@ -79,10 +87,14 @@
 		<div class="panel-body">
 			<ul>
 				<li>
+					<h5><span class="glyphicon glyphicon-user"> {{autor}}</span></h5>
+				</li>
+				<li>
 					<span class="badge">{{date}}</span>
 				</li>
 				<li>
 					<div class="panel-body">
+					<img src="{{images}}" width="300px" alt=""><br>
 						{{text}}
 					</div>
 

@@ -3,8 +3,16 @@
   {text:"estoy de viaje", date:new Date()},
   {text:"estoy aburrido",date:new Date()}
 ]*/
+URL=new ReactiveVar("");
+Uploader.finished=function(index, fileInfo, templateContex){
+  URL.set(fileInfo.url);
+  //console.log(fileInfo);
+};
 Template.profile.helpers({
-	DATOS:POSTS.find()
+	DATOS:POSTS.find(),
+  URL(){
+    return URL.get();
+  }
 });
 Template.profile.events({
 	"click #btnsend":function(e){
@@ -71,7 +79,7 @@ Template.perfil.helpers({
   fullname:function(){
     if(Accounts.user().profile.fullname==undefined)
     {
-      return "pendejo";
+      return "jeje";
     }else{
       
       return Accounts.user().profile.fullname;
@@ -110,4 +118,13 @@ Template.item.events({
     instance.discounter.set(instance.discounter.get() + 1);
   },
 });
-//--------------------
+Template.profile.helpers({
+  autor:function(){
+    if(Accounts.user().profile.name!=undefined)
+    {
+      return Accounts.user().profile.name;
+    }else{
+      return Accounts.user().username;
+    }
+  }
+});
