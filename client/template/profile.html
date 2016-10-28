@@ -1,7 +1,7 @@
 <template name="profile">
 	
 	{{# if currentUser}}
-	<div class="row">
+	<div id="principal" class="row">
 	<div class="panel panel-default" style="position: absolute; width: 100%; height: 100%; top: 0px; z-index: 1;">
 		<div class="panel-body">
 					<nav class="navbar navbar-inverse" role="navigation">
@@ -31,41 +31,25 @@
 						</form>
 						
 						<ul class="nav navbar-nav navbar-right">
-							
+
 							<ul class="nav navbar-nav">
-								
 								<li class="active"><a href="#"><span class="glyphicon glyphicon-globe"></span> Noticias </a></li>
 								<li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Amigos </a></li>
 								<li class="active"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Mensajes </a></li>
 								<li class="active"><a href="#"><span class="glyphicon glyphicon-bell"></span> Notificaciones </a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-      							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> {{>loginButtons align="right"}}  </a></li>
-      							
-    						</ul>
+								<li><a href="#"><span class="glyphicon glyphicon-user"></span> {{>loginButtons align="right"}}  </a></li>
+							</ul>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</div>
 			</nav>
 			<div class="row">
 			  <div class="col-sm-2">
-			  	<div class="foto">
-			  		<h2>Mi Perfil</h2>
-			  		<img src="/img/usuario.png">
-			  		<ul>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-user"></span></h5>
-			  			</li>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-home"></span></h5>
-			  			</li>
-			  			<li>
-			  				<h5><span class="glyphicon glyphicon-earphone"></span></h5>
-			  			</li>
-			  		</ul>
-			  	</div>
+			  	{{>perfil}}
 			  </div>
-			  <div class="col-sm-7">
+			  <div id="publicaciones"   class="col-sm-7">
 			  	<ul>
 			  		<li>
 			  			<form action="" method="POST" role="form" id="formpublic">
@@ -101,6 +85,7 @@
 					<div class="panel-body">
 						{{text}}
 					</div>
+
 				</li>
 				<li class="active">
 					<a href="#"><span class="glyphicon glyphicon-thumbs-up"> </span>Me gusta </a>

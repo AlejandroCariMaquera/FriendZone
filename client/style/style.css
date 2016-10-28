@@ -47,10 +47,6 @@ background: url("/img/friend1.jpg");
 	text-shadow: 5px 3px 1px #000000;
 }
 
-.carousel-caption{
-	color: red;
-	text-align: left;
-}
 .contenedor{
 	text-align: center;
 	color: white;
@@ -130,6 +126,7 @@ background: url("/img/friend1.jpg");
 .post textarea{
 	width: 150%;
 	height:400%;
+	border: 10px solid red;
 }
 .img-circle{
 	width: 100px;
@@ -142,4 +139,6 @@ background: url("/img/friend1.jpg");
  #footer .panel2 ul li{
  	display:inline;
  }
- 
+ #principal publicaciones {
+ 	border: 10px solid red;
+ }

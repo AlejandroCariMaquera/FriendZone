@@ -57,3 +57,24 @@ Template.form.onRendered(function(instance){
       Meteor.logout();
     }
   });
+Template.perfil.helpers({
+  texto:function(){
+    if(Accounts.user().profile.name!=undefined)
+    {
+      return Accounts.user().profile.name;
+    }else{
+      return Accounts.user().username;
+    }
+  }
+});
+Template.perfil.helpers({
+  fullname:function(){
+    if(Accounts.user().profile.fullname==undefined)
+    {
+      return "pendejo";
+    }else{
+      
+      return Accounts.user().profile.fullname;
+    }
+  }
+});
