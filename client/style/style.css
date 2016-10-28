@@ -93,15 +93,7 @@ background: url("/img/friend1.jpg");
 	border-radius: 50px;
 	color: red;
  }
-.col-sm-3{
-	border:1px solid white;
-}
-.col-sm-7{
-	border:2px solid white;
-}
-.col-sm-2{
-	border:1px solid white;
-}
+
 .foto{
 	text-align: center;
 	color: black;
