@@ -116,7 +116,7 @@ background: url("/img/friend1.jpg");
 	width: 100px;
 	height: 100px;
 }
-.foto h5{
+.foto h4{
 	text-align: left;
 }
 .post{
@@ -132,9 +132,8 @@ background: url("/img/friend1.jpg");
 	width: 100px;
 	height: 50px;
 }
-.panel-body{
-	background: #F7FFF9;
-	height: 150%;
+.panel-bodyy{
+	background: #e6e6e6;
 }
  #footer .panel2 ul li{
  	display:inline;
