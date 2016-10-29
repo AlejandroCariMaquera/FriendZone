@@ -128,3 +128,25 @@ Template.profile.helpers({
     }
   }
 });
+//--->nombre a las publicaciones
+Template.item.helpers({
+  texto:function(){
+    if(Accounts.user().profile.name!=undefined)
+    {
+      return Accounts.user().profile.name;
+    }else{
+      return Accounts.user().username;
+    }
+  }
+});
+Template.item.helpers({
+  fullname:function(){
+    if(Accounts.user().profile.fullname==undefined)
+    {
+      return "jeje";
+    }else{
+      
+      return Accounts.user().profile.fullname;
+    }
+  }
+});
