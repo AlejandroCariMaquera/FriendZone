@@ -9,7 +9,7 @@ Uploader.finished=function(index, fileInfo, templateContex){
   //console.log(fileInfo);
 };
 Template.profile.helpers({
-	DATOS:POSTS.find(),
+	DATOS:POSTS.find({}, {sort: [ ["date", "desc"] ] }),
   URL(){
     return URL.get();
   }
@@ -19,6 +19,8 @@ Template.profile.events({
 		e.preventDefault();
 		var r=$("#formpublic").serializeObject();
 		POSTS.insert(r);
+    $("#input").val("");
+    $("#formulario li").find("img").attr("src","");
     //console.log(r);
 	}
 });
@@ -95,6 +97,10 @@ Template.item.helpers({
   counter() {
     return Template.instance().counter.get();
   },
+  itemName(user){
+    var usuario = Accounts.users.findOne({_id:user});
+    return usuario.username+' '+usuario.profile.fullname;
+  }
 });
 Template.item.events({
   'click #like'(event, instance) {
@@ -148,5 +154,14 @@ Template.item.helpers({
       
       return Accounts.user().profile.fullname;
     }
+  }
+});
+Template.item.events({
+  "click #coment":function(e){
+    e.preventDefault();
+    alert("Quiere comentar?? jajajaja no me haga reir !!! jajajajaja");
+    //var r=$("#formpublic").serializeObject();
+    //POSTS.insert(r);
+    //console.log(r);
   }
 });
