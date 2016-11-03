@@ -88,7 +88,9 @@
 				  		{{/each}}
 			  		</ul>
 			  </div>
-			  <div class="col-sm-4" ><h1>CHAT</h1></div>
+			  <div class="col-sm-4" >
+			  	{{>chat}}
+			  </div>
 			</div>
 		</div>
 	</div>
@@ -101,10 +103,8 @@
 			<ul>
 				<li>
 					<h5><span class="glyphicon glyphicon-user"> {{itemName user}} </span></h5>
-
-					<li>
-					
-						{{date}}
+					<li>				
+						<span class="glyphicon glyphicon-time"></span> {{date}}
 					</li>
 				</li>
 				<li align="center">

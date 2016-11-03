@@ -1,0 +1,20 @@
+<template name="chat">
+	<div class="mainChatStyles">
+		<ul class="list-group">
+			{{#each msnList}}
+				{{>msnItems}}
+			{{/each}}	
+		</ul>	
+	</div>	
+	<form class="chatSendMessages">
+		<input type="text" value="" name="msn" placeholder="Escriba su Mensaje">
+	</form>
+</template>
+
+<template name="msnItems">
+	<li class="list-group-item">
+		<span class="glyphicon glyphicon-user"> {{itemN user}} </span>
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		{{msn}} 	
+	</li>
+</template>

@@ -14,6 +14,7 @@ Template.profile.helpers({
     return URL.get();
   }
 });
+
 Template.profile.events({
 	"click #btnsend":function(e){
 		e.preventDefault();
