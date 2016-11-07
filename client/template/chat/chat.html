@@ -1,13 +1,16 @@
 <template name="chat">
-	<div class="mainChatStyles">
-		<ul class="list-group">
-			{{#each msnList}}
-				{{>msnItems}}
-			{{/each}}	
-		</ul>	
-	</div>	
-	<form class="chatSendMessages">
-		<input type="text" value="" name="msn" placeholder="Escriba su Mensaje">
+	<div class="panel panel-default">
+		<div class="panel-body" id="divGrid" style="overflow: auto; height: 450px">
+			<ul class="list-group">
+				{{#each msnList}}
+					{{>msnItems}}
+				{{/each}}	
+			</ul>
+		</div>
+	</div>
+
+	<form class="chatSendMessages" align="left">
+		<input type="text" value="" name="msn" placeholder="Escriba su Mensaje" style="position: absolute; width:400px; height: 50px;">
 	</form>
 </template>
 

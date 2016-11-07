@@ -160,7 +160,7 @@ Template.item.helpers({
 Template.item.events({
   "click #coment":function(e){
     e.preventDefault();
-    alert("Quiere comentar?? jajajaja no me haga reir !!! jajajajaja");
+    //alert("Quiere comentar?? jajajaja no me haga reir !!! jajajajaja");
     //var r=$("#formpublic").serializeObject();
     //POSTS.insert(r);
     //console.log(r);

@@ -1,0 +1,26 @@
+<template name="ComentsForm">
+	<ul>
+		{{#each listComents}}
+			<li>
+				{{>itemComents}}
+			</li>
+		{{/each}}
+	</ul>
+	<form action="" method="POST" role="form" class="formComents">
+		<legend>Comentarios</legend>
+	
+		<div class="form-group">
+			<label for="">Texto</label>
+			<textarea name="text" id="inputText" class="form-control" rows="3" required="required"></textarea>
+			<input type="hidden" value="{{_id}}" name="articuloId">
+		</div>
+	
+		
+	
+		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</template>
+<template name="itemComents">
+ {{text}}
+ {{current_date}}
+</template>

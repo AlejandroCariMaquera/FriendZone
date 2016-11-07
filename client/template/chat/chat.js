@@ -15,5 +15,5 @@ Template.msnItems.helpers({
 });
 
 Template.chat.helpers({
-  msnList:MESSAGES.find({}, {sort: [ ["date", "asc"] ] })
+  msnList:MESSAGES.find({}, {sort: [ ["date", "desc"] ] })
 });
