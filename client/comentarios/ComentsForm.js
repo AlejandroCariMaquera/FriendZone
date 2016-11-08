@@ -9,5 +9,12 @@ Template.ComentsForm.events({
 		e.preventDefault();
 		var dato=$(e.currentTarget).closest("form").serializeObject();
 		COMENTS.insert(dato);
+		$("#inputText").val("");
 	}
+});
+Template.itemComents.helpers({
+  itemC(user){
+    var usuario = Accounts.users.findOne({_id:user});
+    return usuario.username+' '+usuario.profile.fullname;
+  }
 });

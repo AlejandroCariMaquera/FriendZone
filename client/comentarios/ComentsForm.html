@@ -7,20 +7,17 @@
 		{{/each}}
 	</ul>
 	<form action="" method="POST" role="form" class="formComents">
-		<legend>Comentarios</legend>
-	
 		<div class="form-group">
-			<label for="">Texto</label>
-			<textarea name="text" id="inputText" class="form-control" rows="3" required="required"></textarea>
+			<textarea name="text" id="inputText" class="form-control" rows="2" placeholder="Escribe un comentario"></textarea>
 			<input type="hidden" value="{{_id}}" name="articuloId">
 		</div>
-	
-		
-	
-		<button type="submit" class="btn btn-primary">Enviar</button>
+		<button type="submit" class="btn btn-primary"> Comentar <span class="glyphicon glyphicon-comment"></span></button>
 	</form>
 </template>
 <template name="itemComents">
- {{text}}
- {{current_date}}
+	<li class="list-group-item">
+		<a><span class="glyphicon glyphicon-user"> <em><b>{{itemC user}}</b></em></span>
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a> 
+		{{text}}<p align="right"><sub><small>{{current_date}}</small></sub></p>	  	
+	</li>
 </template>

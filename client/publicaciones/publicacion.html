@@ -1,0 +1,79 @@
+<template name="publicacion">
+	<div class="panel panel-default">
+					
+						<ul id="formulario">
+							<li>
+								<img src="{{URL}}" width="200px">
+							</li>
+					  		<li>
+				  				{{> upload_bootstrap}}	  			
+					  		</li>
+					  		<li>
+					  			<form action="" method="POST" role="form" id="formpublic">
+					  				<ul align="right">
+					  					<li >
+					  						<div class="form-group">
+						  						<input type="hidden" value="{{URL}}" name="images">
+						  						<textarea name="text" id="input" class="form-control" rows="3" placeholder="¿Que estas pensando?"></textarea>
+						  						<button type="submit" id="btnsend" class="btn btn-primary"> PUBLICAR <span class="glyphicon glyphicon-share"></span></button>
+							  					 
+							  				</div>
+
+					  					</li>
+					  				</ul>
+					  			</form>
+					  		</li>
+					  				  		
+					  	</ul>
+					
+				</div>
+			  	<ul>
+			  		{{#each DATOS}}
+				  	<li>
+				  		{{>item}}
+
+				  	</li>
+				  	{{/each}}
+
+			  	</ul>
+</template>
+
+<template name="item">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<ul>
+				<li>
+					<h5><span class="glyphicon glyphicon-user"> {{itemName user}} </span></h5>
+					<li>				
+						<span class="glyphicon glyphicon-time"></span> {{date}}
+					</li>
+				</li>
+				<li align="center">
+					<h3>{{text}}</h3>
+					<img src="{{images}}" width="400px" alt="" ><br>	
+				</li>
+				<hr>
+				<li>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
+						<a id="like" href=""> {{counter}} <span class="glyphicon glyphicon-thumbs-up"> </span> Me gusta  </a>	
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
+						<a data-toggle="collapse" href="#collapse-{{_id}}" id="coment"> <span class="glyphicon glyphicon-comment"></span>  Comentar </a>
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
+						<a id="dislike" href=""> {{discounter}} <span class="glyphicon glyphicon-thumbs-down"></span> No me gusta </a>
+					</div>
+					<br>		
+				</li>
+				<br>
+				<li>
+					<div id="collapse-{{_id}}" class="panel-collapse collapse">
+						{{>ComentsForm}}
+					</div>
+					
+				</li>
+							
+			</ul>
+		</div>
+	</div>
+</template>
