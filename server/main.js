@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 Meteor.startup(function(){
 	
 	UploadServer.init({
@@ -5,6 +6,12 @@ Meteor.startup(function(){
 	    uploadDir: process.env.PWD + '/.uploads/',
 	    checkCreateDirectories: true //create the directories for you
 	  });
+
+	Meteor.publish('notificaciones', function() {
+ 		 return Notifications.find();
+	});
 });
-import { Meteor } from 'meteor/meteor';
+
+
+
 
