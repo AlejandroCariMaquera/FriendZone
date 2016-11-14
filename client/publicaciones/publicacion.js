@@ -9,10 +9,19 @@ Template.publicacion.events({
 	"click #btnsend":function(e){
 		e.preventDefault();
 		var r=$("#formpublic").serializeObject();
-		POSTS.insert(r);
-    $("#input").val("");
-    $("#formulario li").find("img").attr("src","");
-    //console.log(r);
+    if(r.text||r.images){
+      POSTS.insert(r);
+      $("#input").val("");
+      $("#formulario li").find("img").attr("src","");
+      $('.done').click();
+      $('[name="images"]').val("");
+    }
+    else
+    {
+      alert("Debes introducir un estado o una imagen para poder PUBLICAR");
+    }
+		
+    //console.log(r);*/
 	}
 });
 //Codigo like dislike
@@ -86,5 +95,12 @@ Template.item.helpers({
 Template.item.events({
   "click #coment":function(e){
     e.preventDefault();
+  },
+  'click #removePublicacion': function(e) {
+    e.preventDefault();
+    if (confirm("¿Seguro que deseas eliminar la publicación?")) {
+      var deletePublic = this._id;
+      POSTS.remove({_id:deletePublic});
+    }
   }
 });

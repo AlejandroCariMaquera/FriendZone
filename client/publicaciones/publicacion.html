@@ -1,4 +1,6 @@
 <template name="publicacion">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 	<div class="panel panel-default">
 					
 						<ul id="formulario">
@@ -43,7 +45,13 @@
 		<div class="panel-body">
 			<ul>
 				<li>
-					<h5><span class="glyphicon glyphicon-user"> {{itemName user}} </span></h5>
+					<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+						<a><span class="glyphicon glyphicon-user"> <em><b> {{itemName user}} </b></em></span>
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" align="right">
+						<a href="" id="removePublicacion"><span class="glyphicon glyphicon-remove"></span> Eliminar </a> 
+					</div>
 					<li>				
 						<span class="glyphicon glyphicon-time"></span> {{date}}
 					</li>

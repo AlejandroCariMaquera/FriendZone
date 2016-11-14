@@ -28,7 +28,7 @@ Template.form.onRendered(function(instance){
     cont = (cont+1)%3;
     $("#contenido").addClass("fondo"+(cont));
     $("#contenido").data('cont',cont);
-  },3000);  
+  },5000);  
 
 });
 

@@ -8,7 +8,7 @@
 	</ul>
 	<form action="" method="POST" role="form" class="formComents">
 		<div class="form-group">
-			<textarea name="text" id="inputText" class="form-control" rows="2" placeholder="Escribe un comentario"></textarea>
+			<textarea name="text" id="inputText" class="form-control para-texto" rows="2" placeholder="Escribe un comentario"></textarea>
 			<input type="hidden" value="{{_id}}" name="articuloId">
 		</div>
 		<button type="submit" class="btn btn-primary"> Comentar <span class="glyphicon glyphicon-comment"></span></button>
@@ -16,8 +16,33 @@
 </template>
 <template name="itemComents">
 	<li class="list-group-item">
-		<a><span class="glyphicon glyphicon-user"> <em><b>{{itemC user}}</b></em></span>
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a> 
-		{{text}}<p align="right"><sub><small>{{current_date}}</small></sub></p>	  	
+		{{#if edit}}
+			<form action="" method="POST" role="form" id="actualizar" >
+				<div class="form-group">
+					<textarea name="text" id="inputText" class="form-control" rows="2" placeholder="Edita tu comentario : {{text}}"></textarea>
+					<input type="hidden" value="{{text}}" name="articuloId">
+				</div>
+				<button type="submit" id="btnedit" class="btn btn-primary">Editar</button>
+			</form>
+		{{else}}
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+				<a><span class="glyphicon glyphicon-user"> <em><b>{{itemC user}}</b></em></span>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a> 
+				{{text}}
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" align="right">
+				<small><a href="" id="editComent"><span class="glyphicon glyphicon-pencil"></span> Editar </a></small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+				<span class="glyphicon glyphicon-time"></span><small> {{current_date}} </small>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" align="right">
+				<small><a href="" id="deleteComent"><span class="glyphicon glyphicon-remove"></span> Eliminar </a></small> 
+			</div>
+		</div>
+		{{/if}}
 	</li>
 </template>
