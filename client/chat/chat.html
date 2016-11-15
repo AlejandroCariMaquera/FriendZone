@@ -1,11 +1,28 @@
 <template name="chat">
 	<div class="panel panel-default">
 		<div class="panel-body" id="divGrid" style="overflow: auto; height: 450px">
-			<ul class="list-group">
-				{{#each msnList}}
-					{{>msnItems}}
-				{{/each}}	
-			</ul>
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+				<ul class="list-group">
+					{{#each msnList}}
+						{{>msnItems}}
+					{{/each}}	
+				</ul>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<small><ul>
+					<h5>AMIGOS</h5>
+					{{#each usuarios}}
+					{{#if status.online}}
+						<i class="fa fa-circle" style="color:#0f0"></i>
+						{{else}}
+						<i class="fa fa-circle" style="color:#f00"></i>
+						{{/if}}
+						{{ itemN }} <br>
+						
+					{{/each}}
+				</ul></small>
+			</div>
+			
 		</div>
 	</div>
 

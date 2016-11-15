@@ -17,3 +17,12 @@ Template.msnItems.helpers({
 Template.chat.helpers({
   msnList:MESSAGES.find({}, {sort: [ ["date", "desc"] ] })
 });
+Template.chat.helpers({
+	itemN(){
+	    var usuario = Accounts.users.findOne({_id:this._id});
+	    return usuario.username;
+	},	
+	usuarios:function(){
+  		return Meteor.users.find();
+  	}
+});

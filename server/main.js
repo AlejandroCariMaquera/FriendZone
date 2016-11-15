@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 Meteor.startup(function(){
 	
 	UploadServer.init({
@@ -6,6 +5,10 @@ Meteor.startup(function(){
 	    uploadDir: process.env.PWD + '/.uploads/',
 	    checkCreateDirectories: true //create the directories for you
 	  });
+});
+import { Meteor } from 'meteor/meteor';
+Meteor.publish('usuarios',function(){
+	return Meteor.users.find({ "status.online": true });
 });
 
 
