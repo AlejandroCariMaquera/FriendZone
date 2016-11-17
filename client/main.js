@@ -31,9 +31,7 @@ Template.form.onRendered(function(instance){
   },5000);  
 
 });
-
-  Template.nav.events({
-
+Template.nav.events({
     'click #login': function() {
       var username = $('#login-username').val();
       var password = $('#login-password').val();
@@ -46,4 +44,5 @@ Template.form.onRendered(function(instance){
     'click #logout': function() {
       Meteor.logout();
     }
-  });
+});
+  
