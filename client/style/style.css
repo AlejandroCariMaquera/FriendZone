@@ -125,11 +125,17 @@ background: url("/img/friend1.jpg");
 	height: 50px;
 }
 .panel-bodyy{
-	background: #e6e6e6;
+	background: url("/img/muro4.jpg");
 }
  #footer .panel2 ul li{
  	display:inline;
  }
  #principal publicaciones {
  	border: 10px solid red;
+ }
+ #retrato{
+ 	background: url("/img/negro1.jpg");
+ 	border-radius: 50px;
+ 	box-shadow: 10px 10px 10px #ffffff;
+ 	opacity: 1;
  }
