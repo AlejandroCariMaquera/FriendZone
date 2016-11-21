@@ -1,10 +1,14 @@
+URL=new ReactiveVar("");
+Uploader.finished=function(index, fileInfo, templateContex){
+  URL.set(fileInfo.url);
+  //console.log(fileInfo);
+};
 Template.publicacion.helpers({
   DATOS:POSTS.find({}, {sort: [ ["date", "desc"] ] }),
   URL(){
     return URL.get();
   }
 });
-
 Template.publicacion.events({
 	"click #btnsend":function(e){
 		e.preventDefault();

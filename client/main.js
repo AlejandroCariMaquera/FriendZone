@@ -1,8 +1,3 @@
-URL=new ReactiveVar("");
-Uploader.finished=function(index, fileInfo, templateContex){
-  URL.set(fileInfo.url);
-  //console.log(fileInfo);
-};
 
   Template.form.events({
     'click #signup': function() {

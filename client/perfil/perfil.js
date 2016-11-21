@@ -12,6 +12,19 @@ Template.perfil.events({
 	"click #guardar":function(e){
 		e.preventDefault();
     var r=$("#perfil").serializeObject();
-    console.log(r);
+    profile = PERFIL.findOne({user:Accounts.user()._id});
+    if(profile!=null)
+      PERFIL.update({_id:profile._id},{
+        $set:r
+      });
+    else
+      PERFIL.insert(r);
 	}
+});
+Template.perfil.helpers({
+   dataProfile(user_id){
+
+    data = PERFIL.findOne({user:Accounts.user()._id});
+    return data;
+  }
 });
