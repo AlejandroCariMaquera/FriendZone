@@ -2,6 +2,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<header>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
+		{{#if showBanner}}
 		<nav class="navbar navbar-inverse" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -49,10 +50,14 @@
 				
 			</div>
 		</nav>
+		{{/if}}
 	</header>
 	
 	<div class="container-fluid">
+		
 		{{>Template.dynamic template=main}}
+		
+
 	</div>	
 </template>
 

@@ -49,15 +49,17 @@
 						<a><span class="glyphicon glyphicon-user"> <em><b> {{itemName user}} </b></em></span>
 					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 					</div>
+					{{#if can_eliminar}}
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" align="right">
-						<a href="" id="removePublicacion"><span class="glyphicon glyphicon-remove"></span> Eliminar </a> 
+						<a href="" id="removePublicacion"><span class="glyphicon glyphicon-remove"></span> Eliminar </a>
 					</div>
-					<li>				
+					{{/if}}
+					<br><li>				
 						<span class="glyphicon glyphicon-time"></span> {{date}}
 					</li>
 				</li>
 				<li align="center">
-					<h1 style="color: #004d99; font-family: FreeMono">{{text}}</h1>
+					<h1 style="color: white; font-family: FreeMono">{{text}}</h1>
 					<img src="{{images}}" width="400px" alt=""><br>
 				</li>
 				<hr>
@@ -66,7 +68,7 @@
 						<a id="like" href=""> {{counter}} <span class="glyphicon glyphicon-thumbs-up"> </span> Me gusta  </a>	
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
-						<a data-toggle="collapse" href="#collapse-{{_id}}" id="coment"> <span class="glyphicon glyphicon-comment"></span>  Comentar </a>
+						<a data-toggle="collapse" href="#collapse-{{_id}}" id="coment"> <span class="glyphicon glyphicon-comment"></span>  Comentar  {{count}}</a>
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
 						<a id="dislike" href=""> {{discounter}} <span class="glyphicon glyphicon-thumbs-down"></span> No me gusta </a>

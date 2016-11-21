@@ -45,4 +45,20 @@ Template.nav.events({
       Meteor.logout();
     }
 });
+Template.nav.helpers({
+  showBanner(){
+    if(Accounts.user()!= null){
+      return false;
+    }
+    return true;
+  }
+});
+Template.form.helpers({
+  showBanner(){
+    if(Accounts.user()!= null){
+      return false;
+    }
+    return true;
+  }
+});
   

@@ -1,21 +1,17 @@
 Template.perfil.helpers({
-  texto:function(){
+  UserPerfil:function(){
     if(Accounts.user().profile.name!=undefined)
     {
       return Accounts.user().profile.name;
     }else{
-      return Accounts.user().username;
+      return Accounts.user().username+' '+Accounts.user().profile.fullname;
     }
   }
 });
-Template.perfil.helpers({
-  fullname:function(){
-    if(Accounts.user().profile.fullname==undefined)
-    {
-      return "jeje";
-    }else{
-      
-      return Accounts.user().profile.fullname;
-    }
-  }
+Template.perfil.events({
+	"click #guardar":function(e){
+		e.preventDefault();
+    var r=$("#perfil").serializeObject();
+    console.log(r);
+	}
 });

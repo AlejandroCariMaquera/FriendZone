@@ -5,5 +5,5 @@ Template.profile.helpers({
   },  
   usuarios:function(){
       return Meteor.users.find();
-    }
+  }
 });

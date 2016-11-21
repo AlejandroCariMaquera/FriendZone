@@ -1,5 +1,5 @@
 Template.publicacion.helpers({
-	DATOS:POSTS.find({}, {sort: [ ["date", "desc"] ] }),
+  DATOS:POSTS.find({}, {sort: [ ["date", "desc"] ] }),
   URL(){
     return URL.get();
   }
