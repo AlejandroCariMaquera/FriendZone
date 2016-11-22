@@ -28,3 +28,20 @@ Template.perfil.helpers({
     return data;
   }
 });
+Template.perfil.helpers({
+  itemN(){
+      var usuario = Accounts.users.findOne({_id:this._id});
+      return usuario.username;
+  },  
+  usuarios:function(){
+      return Meteor.users.find();
+    }
+});
+Template.perfil.events({
+  "click #btnUser":function(e){
+    e.preventDefault();
+    var usuario = Accounts.users.findOne({_id:this._id});
+    CHAT.insert(usuario);
+    console.log(usuario);
+  }
+});

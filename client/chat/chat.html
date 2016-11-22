@@ -1,53 +1,15 @@
 <template name="chat">
 	<div class="panel panel-default">
-		<div class="panel-body" id="divGrid" style="overflow: auto; height: 450px">
-			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<h3 align="center"> CHAT </h3>
+		<div class="panel-body" id="divGrid" style="overflow: auto; height: 400px">
+			<div>
 				<ul class="list-group">
-					{{#each msnList}}
-						{{>msnItems}}
-						<!--<div class="panel panel-default">
-							<li>
-								<div class="panel-heading" data-toggle="collapse" href="#hola">
-									<h3 class="panel-title"> Nombre de usuario</h3>
-								</div>
-							</li>
-							<li>
-								<div  id="hola" class="panel-collapse collapse">
-									<form action="" method="POST" role="form">				
-										<div class="form-group">
-											<div class="panel panel-default">
-												<div class="panel-body" style="height: 150px">
-												<h5>
-													Aqui apareceran todos los mensajes
-												</h5>
-												</div>
-												<div class="panel-footer">
-													<input type="text" class="form-control" id="" placeholder="Escribe tu mensaje">
-												</div>
-											</div>
-											
-										</div>
-									</form>
-								</div>
-							</li>
-						</div>-->
+					{{#each boxChat}}
+						{{>box}}
 					{{/each}}	
 				</ul>
 			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<small><ul>
-					<h5>AMIGOS</h5>
-					{{#each usuarios}}
-					{{#if status.online}}
-						<i class="fa fa-circle" style="color:#0f0"></i>
-						{{else}}
-						<i class="fa fa-circle" style="color:#f00"></i>
-						{{/if}}
-						{{ itemN }} <br>
-						
-					{{/each}}
-				</ul></small>
-			</div>
+			
 			
 		</div>
 	</div>
@@ -64,3 +26,32 @@
 		{{msn}} 	
 	</li>
 </template>
+<template name="box">
+	<div class="panel panel-default">
+		<li>
+			<div class="panel-heading" data-toggle="collapse" href="##collapse-{{_id}}">
+				<h3 class="panel-title"> {{itemN user}} </h3>
+			</div>
+		</li>
+		<li>
+			<div  id="collapse-{{_id}}" class="panel-collapse collapse">
+				<form action="" method="POST" role="form">				
+					<div class="form-group">
+						<div class="panel panel-default">
+							<div class="panel-body" style="height: 150px">
+								<ul class="list-group">
+									{{#each msnList}}
+										{{>msnItems}}
+									{{/each}}
+								</ul>
+							</div>
+							<div class="panel-footer">
+							<input type="text" class="form-control" id="" placeholder="Escribe tu mensaje">
+							</div>
+						</div>				
+					</div>
+				</form>
+			</div>
+		</li>
+	</div>
+</template> 

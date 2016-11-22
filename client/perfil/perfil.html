@@ -64,5 +64,21 @@
 			</div>	
 		</ul>
 	</div>
+	<div>
+		<div class="panel panel-default" id="divGrid" style="overflow: auto; height: 230px">
+			<ul>
+				<h3 align="center"> AMIGOS </h3>
+				{{#each usuarios}}
+				{{#if status.online}}
+					<i class="fa fa-circle" style="color:#0f0"></i>
+					{{else}}
+					<i class="fa fa-circle" style="color:#f00"></i>
+					{{/if}}
+					<a type="button" id="btnUser" name="user" href="">{{ itemN }}</a>
+					 <br>
+				{{/each}}
+			</ul>
+		</div>	
+	</div>
 </template>
 
