@@ -29,9 +29,10 @@
 <template name="box">
 	<div class="panel panel-default">
 		<li>
-			<div class="panel-heading" data-toggle="collapse" href="##collapse-{{_id}}">
-				<h3 class="panel-title"> {{itemN user}} </h3>
-			</div>
+			<div class="panel-heading" style="background-color: #0066ff; border-radius: 5px 5px 5px 5px" data-toggle="collapse" href="##collapse-{{_id}}">
+				<button type="button" id="removeChat" class="close" style="color: white">&times;</button>
+				<a href="" class="panel-title" style="color: white"> {{itemN user}} </a>
+			</div>			
 		</li>
 		<li>
 			<div  id="collapse-{{_id}}" class="panel-collapse collapse">

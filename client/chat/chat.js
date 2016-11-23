@@ -6,7 +6,7 @@ Template.msnItems.helpers({
 });
 Template.box.helpers({
   itemN(user){
-    var usuario = Accounts.users.findOne({_id:user});
+    var usuario = Accounts.users.findOne({_id:this._id});
     return usuario.username+' '+usuario.profile.fullname;
   }
 });
@@ -42,5 +42,10 @@ Template.box.events({
 		var message = event.target.msn.value;
 		MESSAGES.insert({msn:message,date:new Date()});
 		event.target.msn.value="";
-	}
+	},
+	'click #removeChat': function(e) {
+	    e.preventDefault();
+	    var deleteChat = this._id;
+	    CHAT.remove({_id:deleteChat});
+  }
 });

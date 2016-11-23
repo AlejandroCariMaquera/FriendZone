@@ -40,8 +40,8 @@ Template.perfil.helpers({
 Template.perfil.events({
   "click #btnUser":function(e){
     e.preventDefault();
-    var usuario = Accounts.users.findOne({_id:this._id});
-    CHAT.insert(usuario);
-    console.log(usuario);
+    var us = Accounts.users.findOne({_id:this._id});
+    CHAT.insert(us);
+    console.log(this);
   }
 });
