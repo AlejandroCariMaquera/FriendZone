@@ -1,3 +1,18 @@
+//Template.perfil.test ="hola MUNDO";
+URL2=new ReactiveVar("");
+Template.perfil.helpers({
+  URL2(){
+    return URL2.get();
+  },
+  perfilCallback : function(){
+    return {
+        finished: function(index, fileInfo, templateContex){
+          URL2.set(fileInfo.url);
+          console.log(fileInfo);
+      }
+    }
+  }
+});
 Template.perfil.helpers({
   UserPerfil:function(){
     if(Accounts.user().profile.name!=undefined)
@@ -13,6 +28,7 @@ Template.perfil.events({
 		e.preventDefault();
     var r=$("#perfil").serializeObject();
     profile = PERFIL.findOne({user:Accounts.user()._id});
+    console.log(r);
     if(profile!=null)
       PERFIL.update({_id:profile._id},{
         $set:r
@@ -20,6 +36,8 @@ Template.perfil.events({
     else
       PERFIL.insert(r);
 	}
+  //var r=$("#fotito").serializeObject();
+      //POSTS.insert(r);
 });
 Template.perfil.helpers({
    dataProfile(user_id){
