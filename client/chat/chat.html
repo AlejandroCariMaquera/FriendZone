@@ -10,13 +10,15 @@
 				</ul>
 			</div>
 			
+			{{>input}}
+			{{> messages }}
 			
 		</div>
 	</div>
 
-	<form class="chatSendMessages" align="left">
+	<!--<form class="chatSendMessages" align="left">
 		<input type="text" value="" name="msn" placeholder=" Escriba su Mensaje" style="position: absolute; width:80%; height: 50px;">
-	</form>
+	</form>-->
 </template>
 
 <template name="msnItems">
@@ -41,9 +43,8 @@
 						<div class="panel panel-default">
 							<div class="panel-body" style="height: 150px">
 								<ul class="list-group">
-									{{#each msnList}}
-										{{>msnItems}}
-									{{/each}}
+									{{>input}}
+			{{> messages }}
 								</ul>
 							</div>
 							<div class="panel-footer">
@@ -52,7 +53,18 @@
 						</div>				
 					</div>
 				</form>
+				<form class="chatSendMessages" align="left">
+									<input type="text" value="" name="msn" placeholder=" holaaaaaaaa" >
+				</form>
 			</div>
 		</li>
 	</div>
 </template> 
+<template name="messages">
+  {{#each msgs}}
+    <strong>{{name}}:</strong> {{text}}<br>
+  {{/each}}
+</template>
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>

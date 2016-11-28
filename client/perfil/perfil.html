@@ -70,16 +70,23 @@
 	<div>
 		<div class="panel panel-default" id="divGrid" style="overflow: auto; height: 230px">
 			<ul>
-				<h3 align="center"> AMIGOS </h3>
+				<h5 align="center"> AMIGOS ONLINE </h5>
+				<!--AUMENTADO-->
+				{{#each onlusr}}
+					<li class="user"><i class="fa fa-circle" style="color:#0f0"></i><a href='#'>{{username}}</a></li>
+            	{{/each}}
+
+<!--
 				{{#each usuarios}}
-				{{#if status.online}}
+					{{#if status.online}}
 					<i class="fa fa-circle" style="color:#0f0"></i>
 					{{else}}
 					<i class="fa fa-circle" style="color:#f00"></i>
 					{{/if}}
-					<a type="button" id="btnUser" name="user" href="">{{ itemN }}</a>
+
+					<a href='#'>{{username}}</a>
 					 <br>
-				{{/each}}
+				{{/each}}-->
 			</ul>
 		</div>	
 	</div>
