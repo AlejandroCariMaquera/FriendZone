@@ -7,3 +7,11 @@ Template.profile.helpers({
       return Meteor.users.find();
   }
 });
+Template.profile.events({
+	"click #verPerfil":function(e){
+	e.preventDefault();
+	var usuario = Accounts.users.findOne({_id:this._id});
+    console.log(usuario);
+    //AMIGOS.insert(usuario);
+	}
+});
