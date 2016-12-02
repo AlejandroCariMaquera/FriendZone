@@ -10,7 +10,7 @@
 				</ul>
 			</div>
 			
-			{{>input}}
+		
 			{{> messages }}
 			
 		</div>
@@ -44,7 +44,7 @@
 							<div class="panel-body" style="height: 150px">
 								<ul class="list-group">
 									{{>input}}
-			{{> messages }}
+						{{> messages }}
 								</ul>
 							</div>
 							<div class="panel-footer">
@@ -60,11 +60,16 @@
 		</li>
 	</div>
 </template> 
+<!--aumento-->
 <template name="messages">
+<ul style="background-color: #b8b894; border-radius: 10px 10px 10px 10px;">
   {{#each msgs}}
-    <strong>{{name}}:</strong> {{text}}<br>
+  	<span class="glyphicon glyphicon-user"> {{name}}</span> <div class="t1"></div><ul style="border:0.5px solid #e6ffe6 ;border-radius: 0px 10px 10px 10px; width: 150px; background-color: #e6ffe6 ">{{text}}</ul><br>
+  	
   {{/each}}
+  </ul>
+  	{{>input}}
 </template>
 <template name="input">
-  <p>Message: <input type="text" id="message"></p>
+  <p>Messag: <input type="text" id="message"></p>
 </template>
