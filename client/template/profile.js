@@ -32,7 +32,7 @@ this.informacion = new ReactiveVar('');
 
 
 Template.profile.helpers({
-  PUBLIC:POSTS.find({}, {sort: [ ["date", "desc"] ] })
+  PUBLIC:POSTS.find({/*user:aqui va su id del user*/}, {sort: [ ["date", "desc"] ] })
 });
 
 //return Accounts.user().profile.fullname;

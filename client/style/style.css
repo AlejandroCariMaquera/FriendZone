@@ -121,6 +121,7 @@ background: url("/img/friend1.jpg");
 }
 .panel-bodyy{
 	background: url("/img/muro4.jpg");
+	margin:0px;
 }
  #footer .panel2 ul li{
  	display:inline;

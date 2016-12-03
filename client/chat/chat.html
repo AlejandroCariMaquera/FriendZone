@@ -1,65 +1,17 @@
 <template name="chat">
-	<div class="panel panel-default">
-		<h3 align="center"> CHAT </h3>
-		<div class="panel-body" id="divGrid" style="overflow: auto; height: 400px">
-			<div>
-				<ul class="list-group">
-					{{#each boxChat}}
-						{{>box}}
-					{{/each}}	
-				</ul>
-			</div>
-			
-		
-			{{> messages }}
-			
+	<div class="panel panel-default" >
+		<div class="panel-header" style="background-color: #005ce6 ; height:30px">
+			<p>CHAT</p>  
 		</div>
+		<div class="panel-body" id="divGrid" style="overflow: auto; height: 400px">
+			{{> messages }}
+		</div>
+		<div class="panel-footer">
+			{{>input}}
+		</div>
+		
 	</div>
-
-	<!--<form class="chatSendMessages" align="left">
-		<input type="text" value="" name="msn" placeholder=" Escriba su Mensaje" style="position: absolute; width:80%; height: 50px;">
-	</form>-->
 </template>
-
-<template name="msnItems">
-	<li class="list-group-item">
-		<span class="glyphicon glyphicon-user"> {{itemN user}} </span>
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		{{msn}} 	
-	</li>
-</template>
-<template name="box">
-	<div class="panel panel-default">
-		<li>
-			<div class="panel-heading" style="background-color: #0066ff; border-radius: 5px 5px 5px 5px" data-toggle="collapse" href="##collapse-{{_id}}">
-				<button type="button" id="removeChat" class="close" style="color: white">&times;</button>
-				<a href="" class="panel-title" style="color: white"> {{itemN user}} </a>
-			</div>			
-		</li>
-		<li>
-			<div  id="collapse-{{_id}}" class="panel-collapse collapse">
-				<form action="" method="POST" role="form">				
-					<div class="form-group">
-						<div class="panel panel-default">
-							<div class="panel-body" style="height: 150px">
-								<ul class="list-group">
-									{{>input}}
-						{{> messages }}
-								</ul>
-							</div>
-							<div class="panel-footer">
-							<input type="text" class="form-control" id="" placeholder="Escribe tu mensaje">
-							</div>
-						</div>				
-					</div>
-				</form>
-				<form class="chatSendMessages" align="left">
-									<input type="text" value="" name="msn" placeholder=" holaaaaaaaa" >
-				</form>
-			</div>
-		</li>
-	</div>
-</template> 
 <!--aumento-->
 <template name="messages">
 <ul style="background-color: #b8b894; border-radius: 10px 10px 10px 10px;">
@@ -68,8 +20,8 @@
   	
   {{/each}}
   </ul>
-  	{{>input}}
+  	
 </template>
 <template name="input">
-  <p>Messag: <input type="text" id="message"></p>
+  <input type="text" id="message" placeholder="ESCRIBE AQUI TU MENSAJE" class="form-control">
 </template>
