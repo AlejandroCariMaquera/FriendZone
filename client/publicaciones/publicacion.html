@@ -46,7 +46,11 @@
 			<ul>
 				<li>
 					<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-						<a href=""><span class="glyphicon glyphicon-user"> <em><b> {{itemName user}} </b></em></span>
+						{{#with dataProfile user}}
+							<img src="{{images}}" width="50px" title="{{images}}">
+						{{/with}}
+
+						<a href=""><span> <em><b> {{itemName user}} </b></em></span>
 					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 					</div>
 					{{#if can_eliminar}}
@@ -54,7 +58,8 @@
 						<a href="" id="removePublicacion"><span class="glyphicon glyphicon-remove"></span> Eliminar </a>
 					</div>
 					{{/if}}
-					<br><li>				
+					<br>
+					<li>				
 						<span class="glyphicon glyphicon-time"></span> {{date}}
 					</li>
 				</li>

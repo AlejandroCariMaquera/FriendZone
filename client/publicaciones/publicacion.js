@@ -2,12 +2,12 @@ URL=new ReactiveVar("");
 /*Uploader.finished=function(index, fileInfo, templateContex){
   console.log(templateContex);
 };*/
-
 Template.publicacion.helpers({
   DATOS:POSTS.find({}, {sort: [ ["date", "desc"] ] }),
   URL(){
     return URL.get();
   },
+
   publicationCallback : function(){
     return {
         finished: function(index, fileInfo, templateContex){
@@ -114,6 +114,13 @@ Template.item.events({
       var deletePublic = this._id;
       POSTS.remove({_id:deletePublic});
     }
+  }
+});
+Template.item.helpers({
+   dataProfile(user){
+
+    var data = PERFIL.findOne({user:user});
+    return data;
   }
 });
 

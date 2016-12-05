@@ -41,3 +41,10 @@ Template.itemComents.events({
     }
   }
 });
+Template.itemComents.helpers({
+   dataProfile(user){
+
+    var data = PERFIL.findOne({user:user});
+    return data;
+  }
+});

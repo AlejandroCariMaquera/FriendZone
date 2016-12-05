@@ -13,14 +13,15 @@
 	</div>
 </template>
 <!--aumento-->
-<template name="messages">
-<ul style="background-color: #b8b894; border-radius: 10px 10px 10px 10px;">
-  {{#each msgs}}
-  	<span class="glyphicon glyphicon-user"> {{name}}</span> <div class="t1"></div><ul style="border:0.5px solid #e6ffe6 ;border-radius: 0px 10px 10px 10px; width: 150px; background-color: #e6ffe6 ">{{text}}</ul><br>
-  	
-  {{/each}}
-  </ul>
-  	
+<template name="messages" >
+	<ul>
+	  {{#each msgs}}
+	  <ul style="float: right" >
+	  	<span class="glyphicon glyphicon-user"> {{name}}</span> <div class="t1"></div><ul style="border:0.5px solid #e6ffe6 ;border-radius: 0px 10px 10px 10px; width: 150px; background-color: #e6ffe6 ">{{text}}</ul><br>
+	  </ul>
+	  {{/each}}
+	 </ul>
+ 	
 </template>
 <template name="input">
   <input type="text" id="message" placeholder="ESCRIBE AQUI TU MENSAJE" class="form-control">
