@@ -1,10 +1,10 @@
 <template name="chat">
 	<div class="panel panel-default" >
-		<div class="panel-header" style="background-color: #005ce6 ; height:30px">
-			<p>CHAT</p>  
+		<div class="panel-header" style="background: linear-gradient(to bottom, #0000ff 0%, #00ffff 100%); height:30px">
+			<span class="fa fa-commenting" >SALAS DE CHAT</span>
 		</div>
-		<div class="panel-body" id="divGrid" style="overflow: auto; height: 400px">
-			{{> messages }}
+		<div class="panel-body" id="divGrid" style="overflow: auto; height: 400px;background-color: #b8b894; border-radius: 5px 5px 5px 5px;">
+			{{>messages}}
 		</div>
 		<div class="panel-footer">
 			{{>input}}
@@ -15,14 +15,14 @@
 <!--aumento-->
 <template name="messages" >
 	<ul>
-	  {{#each msgs}}
-	  <ul style="float: right" >
-	  	<span class="glyphicon glyphicon-user"> {{name}}</span> <div class="t1"></div><ul style="border:0.5px solid #e6ffe6 ;border-radius: 0px 10px 10px 10px; width: 150px; background-color: #e6ffe6 ">{{text}}</ul><br>
-	  </ul>
-	  {{/each}}
-	 </ul>
- 	
+		{{#each msgs}}
+			 <ul class="fv{{position user_id}}">
+		  		<span class="glyphicon glyphicon-user"></span> {{name}} <li class="t1"></li><li style="border:0.5px solid #e6ffe6 ;border-radius: 0px 10px 10px 10px; width: 150px; background-color: #e6ffe6">{{text}}</li><br>
+		  	</ul>
+		{{/each}}
+	</ul>	
 </template>
+
 <template name="input">
   <input type="text" id="message" placeholder="ESCRIBE AQUI TU MENSAJE" class="form-control">
 </template>

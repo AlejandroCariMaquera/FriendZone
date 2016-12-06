@@ -26,6 +26,11 @@ Template.messages.helpers({
         if(result){
           return result.messages;
         }
+    },
+    'position'(user_id){
+      if(Accounts.user()._id == user_id)
+        return ' pull-right';
+      return '';
     }
 });
 Template.input.events = {
@@ -34,10 +39,11 @@ Template.input.events = {
         if (Meteor.user())
         {
               var name = Meteor.user().username;
+              var id = Meteor.user()._id;
               var message = document.getElementById('message');
-    
               if (message.value !== '') {
                 var de=ChatRooms.update({"_id":Session.get("roomid")},{$push:{messages:{
+                 user_id:id,
                  name: name,
                  text: message.value,
                  createdAt: Date.now()
