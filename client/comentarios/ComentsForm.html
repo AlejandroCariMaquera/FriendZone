@@ -26,26 +26,26 @@
 			</form>
 		{{else}}
 		<div class="row">
-			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 				{{#with dataProfile user}}
-					<img src="{{images}}" width="30px">
+					<img src="{{images}}" style="width: 30px; height: 30px" class="img-circle">
 				{{/with}}
 				<a><span> <em><b>{{itemC user}}</b></em></span>
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a> 
 				{{text}}
 			</div>
 			{{#if can_edit}}
-			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" align="right">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" align="right">
 				<small><a href="" id="editComent"><span class="glyphicon glyphicon-pencil"></span> Editar </a></small>
 			</div>
 			{{/if}}
 		</div>
 		<div class="row">
-			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 				<span class="glyphicon glyphicon-time"></span><small> {{current_date}} </small>
 			</div>
 			{{#if can_edit}}
-			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" align="right">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" align="right">
 				<small><a href="" id="deleteComent"><span class="glyphicon glyphicon-remove"></span> Eliminar </a></small> 
 			</div>
 			{{/if}}

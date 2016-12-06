@@ -1,7 +1,4 @@
 Template.chat.helpers({
-  boxChat:CHAT.find({}, {sort: [ ["date", "desc"] ] })
-});
-Template.chat.helpers({
 	itemN(){
 	    var usuario = Accounts.users.findOne({_id:this._id});
 	    return usuario.username;
@@ -10,6 +7,7 @@ Template.chat.helpers({
   		return Meteor.users.find();
   	}
 });
+
 Template.chat.events({
 	"submit .chatSendMessages":function(event)
 	{
@@ -21,8 +19,8 @@ Template.chat.events({
 });
 /*auemnatdo*/
 Template.messages.helpers({
-    'msgs':function(){
-        var result=ChatRooms.findOne({_id:Session.get('roomid')});
+    'msgs':function(user){
+        var result=ChatRooms.findOne({_id:Session.get('roomid')});        
         if(result){
           return result.messages;
         }

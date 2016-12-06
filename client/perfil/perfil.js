@@ -73,6 +73,8 @@ Template.perfil.events({
     'click .user':function(){
         Session.set('currentId',this._id);
         var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
+        var us = Accounts.users.findOne({_id:this._id});
+        console.log(us);
         if(res)
         {
             //already room exists
