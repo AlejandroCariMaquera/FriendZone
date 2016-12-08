@@ -1,5 +1,5 @@
 <template name="perfil">
-	<div class="foto" style="background-color: white; text-align: center">
+	<div class="foto" style="background-color: white; text-align: center; border-radius: 40px 40px 40px 40px">
 		<h2>Mi Perfil</h2>
 		{{#with dataProfile}}
 			<img src="{{images}}" class="img-circle">
@@ -20,7 +20,7 @@
 			</li>
 			{{/with}}
 			<li align="right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar"> Editar <span class="glyphicon glyphicon-pencil"></span></button>		
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar" style="border-radius: 20px 0px 50px 0px"> Editar <span class="glyphicon glyphicon-pencil"></span></button>		
 			</li>	
 			<div class="modal fade" id="Editar">
 				<div class="modal-dialog">
@@ -66,29 +66,6 @@
 				</div>
 			</div>	
 		</ul>
-	</div>
-	<div>
-		<div class="panel panel-default" id="divGrid" style="overflow: auto; height: 230px">
-			<ul>
-				<h5 align="center"> AMIGOS ONLINE </h5>
-				<!--AUMENTADO-->
-				{{#each onlusr}}
-					<li class="user"><i class="fa fa-circle" style="color:#0f0"></i><a href='#'>{{username}}</a></li>
-            	{{/each}}
-
-<!--
-				{{#each usuarios}}
-					{{#if status.online}}
-					<i class="fa fa-circle" style="color:#0f0"></i>
-					{{else}}
-					<i class="fa fa-circle" style="color:#f00"></i>
-					{{/if}}
-
-					<a href='#'>{{username}}</a>
-					 <br>
-				{{/each}}-->
-			</ul>
-		</div>	
 	</div>
 </template>
 

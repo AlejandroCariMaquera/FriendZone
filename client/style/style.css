@@ -120,7 +120,7 @@ background: url("/img/friend1.jpg");
 	height: 50px;
 }
 .panel-bodyy{
-	background: url("/img/muro4.jpg");
+	background: linear-gradient(to bottom, #2e2e1f 0%, #acac86 100%);
 	margin:0px;
 }
  #footer .panel2 ul li{

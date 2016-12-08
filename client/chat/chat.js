@@ -58,3 +58,32 @@ Template.input.events = {
     }
   }
 }
+Template.chat.helpers({
+    'onlusr':function(){
+        return Meteor.users.find({ "status.online": true , _id: {$ne: Meteor.userId()} });
+    }
+});
+Template.chat.events({
+    'click .user':function(){
+        Session.set('currentId',this._id);
+        var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
+        var us = Accounts.users.findOne({_id:this._id});
+        console.log(us);
+        if(res)
+        {
+            //already room exists
+            Session.set("roomid",res._id);
+        }
+        else{
+            //no room exists
+            var newRoom= ChatRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
+            Session.set('roomid',newRoom);
+        }
+    }
+    /*'click .user':function(e){
+      e.preventDefault();
+      var us = Accounts.users.findOne({_id:this._id});
+      console.log(us);
+      CHAT.insert(us);
+    }*/
+});
