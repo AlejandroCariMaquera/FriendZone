@@ -1,26 +1,26 @@
 <template name="perfil">
-	<div class="foto" style="background-color: white; text-align: center; border-radius: 40px 40px 40px 40px">
+	<div class="foto" style="background-color: white; text-align: center; border-radius: 5px 5px 5px 5px">
 		<h2>Mi Perfil</h2>
 		{{#with dataProfile}}
 			<img src="{{images}}" class="img-circle">
 		{{/with}}
 		<ul class="list-group">
 			<li>
-				<h5><span class="glyphicon glyphicon-user"> {{UserPerfil}}</span></h5>
+				<h5><span class="glyphicon glyphicon-user"><em><b> {{UserPerfil}} </b></em></span></h5>
 			</li>
 			{{#with dataProfile}}
 			<li>
-				<h5><span class="glyphicon glyphicon-map-marker"> {{ciudad}}</span></h5>
+				<h5><span class="glyphicon glyphicon-map-marker"><em><b> {{ciudad}} </b></em></span></h5>
 			</li>
 			<li>
-				<h5><span class="glyphicon glyphicon-heart-empty"> {{estado_civil}}</span></h5>
+				<h5><span class="glyphicon glyphicon-heart-empty"><em><b> {{estado_civil}} </b></em></span></h5>
 			</li>
 			<li>
-				<h5><span class="glyphicon glyphicon-earphone"> {{celular}} </span></h5>
+				<h5><span class="glyphicon glyphicon-earphone"><em><b> {{celular}} </b></em></span></h5>
 			</li>
 			{{/with}}
 			<li align="right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar" style="border-radius: 20px 0px 50px 0px"> Editar <span class="glyphicon glyphicon-pencil"></span></button>		
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Editar"> Editar <span class="glyphicon glyphicon-pencil"></span></button>		
 			</li>	
 			<div class="modal fade" id="Editar">
 				<div class="modal-dialog">
@@ -60,7 +60,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							<button type="button" class="btn btn-primary" id="guardar">Guardar cambios</button>
+							<button type="button" class="btn btn-primary" id="guardar" data-dismiss="modal">Guardar cambios</button>
 						</div>
 					</div>
 				</div>

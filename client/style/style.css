@@ -130,9 +130,9 @@ background: url("/img/friend1.jpg");
  	border: 10px solid red;
  }
  #retrato{
- 	background: url("/img/negro1.jpg");
- 	border-radius: 50px;
- 	box-shadow: 10px 10px 10px #ffffff;
+ 	background: ;
+ 	border-radius: 5px;
+ 	box-shadow: 5px 5px 5px #ccccff;
  	opacity: 1;
  }
 .t1 {
