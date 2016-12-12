@@ -12,7 +12,7 @@ Template.publicacion.helpers({
     return {
         finished: function(index, fileInfo, templateContex){
           URL.set(fileInfo.url);
-          console.log(fileInfo);
+          //console.log(fileInfo);
       }
     }
   }
@@ -25,6 +25,7 @@ Template.publicacion.events({
       POSTS.insert(r);
       $("#input").val("");
       $("#formulario li").find("img").attr("src","");
+       $("#formulario li").find("video").attr("src","").attr('width', '0');;
       $('.done').click();
       $('[name="images"]').val("");
     }
@@ -32,14 +33,14 @@ Template.publicacion.events({
     {
       alert("Debes introducir un estado o una imagen para poder PUBLICAR");
     }
-		
-    //console.log(r);*/
+		console.log(r);
 	}
 });
 //Codigo like dislike
 Template.item.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.counter = new ReactiveVar(0);
+  var counter=0;
+  this.counter = new ReactiveVar(counter);
 });
 Template.item.helpers({
   counter() {
@@ -54,6 +55,7 @@ Template.item.events({
   'click #like'(event, instance) {
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);
+    LIKE.insert(this);
   },
 });
 
@@ -121,6 +123,18 @@ Template.item.helpers({
 
     var data = PERFIL.findOne({user:user});
     return data;
+  },
+  ifVideo(file){
+    if(file.slice(-3)=='mp4')
+      return true;
+    return false;
+  }
+});
+Template.publicacion.helpers({
+  ifVideo(file){
+    if(file.slice(-3)=='mp4')
+      return true;
+    return false;
   }
 });
 /////////

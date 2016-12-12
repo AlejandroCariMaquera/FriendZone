@@ -5,7 +5,12 @@
 					
 						<ul id="formulario">
 							<li>
-								<img src="{{URL}}" width="200px">
+								{{#unless ifVideo URL}}
+									<img src="{{URL}}" width="200px">
+								{{/unless}}	
+								{{#if ifVideo URL}}
+									<video src="{{URL}}" width="200px" controls></video>
+								{{/if}}
 							</li>
 					  		<li>
 				  				{{> upload_bootstrap callbacks=publicationCallback}}	  			
@@ -64,17 +69,21 @@
 				<li align="center">
 					<br>
 					<h1 style="font-family: FreeMono">{{text}}</h1>
-					<img src="{{images}}" width="400px" alt=""><br>
+					{{#unless ifVideo images}}
+						<img src="{{images}}" width="400px" alt=""><br>
+					{{/unless}}
+					
+					{{#if ifVideo images}}
 					<video src="{{images}}" type="video/mp4" width="auto" controls>
 					 	<code>video</code>
 					</video>
+					{{/if}}
 				</li>
 				<li>
 					<small> <span class="glyphicon glyphicon-time"></span> {{date}} </small>				
 					
 				</li>
 				<hr>
-				
 				<li>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" align="center">
 						<a id="like" href=""> {{counter}} <span class="glyphicon glyphicon-thumbs-up"> </span> Me gusta  </a>	
