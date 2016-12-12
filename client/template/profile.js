@@ -45,3 +45,14 @@ Template.profile.helpers({
 });
 
 //return Accounts.user().profile.fullname;
+//aumentado para buscador
+Template.profile.events({
+  "click #buscador":function(e,template){
+    e.preventDefault();
+    var a=template.find('#search').value;
+    var e=Accounts.users.find({username: {$regex: a}}).fetch();
+    console.log(e);
+  //var r=$("#fotito").serializeObject();
+      //POSTS.insert(r);
+    }
+});
