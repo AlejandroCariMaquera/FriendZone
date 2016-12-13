@@ -34,7 +34,7 @@ background: url("/img/friend1.jpg");
 	border-radius: 50px 0px 50px 0px;
 	
 }
-.panel-heading{
+#fer{
 	background-color: #68b12f;
 	background: linear-gradient(top, #68b12f, #50911e);
 	border: 1px solid #509111;

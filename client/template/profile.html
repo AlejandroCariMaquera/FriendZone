@@ -26,23 +26,25 @@
 							</div>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#lista" id="buscador"><span class="glyphicon glyphicon-search"></span></button>
 						</form>
+
 						<div class="modal fade" id="lista">
 							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title">posibles resultados</h4>
+								<div class="panel panel-info" style="padding:35px;background: #f2f2f2">
+							      <div class="panel-heading">posibles resultados</div>
+							      <div class="panel-body">
+							      	<div class="row" >
+											{{#each amigos}}
+										
+												<li><a data-toggle="modal" href='#modal-id' id="verPerfil"><i class="glyphicon glyphicon-user" style="color:#3385ff"></i> {{username}}</a>
+												</li> 
+												<li>
+													<button type="button" class="btn btn-info btn-xs" data-dismiss="modal">añadir a amigos</button><br>
+												</li><hr>
+											{{/each}}
 									</div>
-									<div class="modal-body">
-										<div class="row">
-											<h1>amigos encontrados</h1>
-											
-										</div>						
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-									</div>
-								</div>
+							      </div>
+							      <div class="panel-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button></div>
+							    </div>
 							</div>
 						</div>
 						<ul class="nav navbar-nav navbar-right">

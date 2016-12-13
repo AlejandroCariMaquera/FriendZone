@@ -19,7 +19,7 @@ Template.profile.helpers({
     return Template.instance().friend.get();
   }
 });
-Template.profile.events({
+Template.profile.events({ 
   "click #verPerfil":function(e,instance){
   e.preventDefault();
   var usuario = Accounts.users.findOne({_id:this._id}); 
@@ -35,12 +35,16 @@ Template.profile.onCreated(function(){
 this.amigo = new ReactiveVar('');
 this.informacion = new ReactiveVar('');
 this.friend = new ReactiveVar('');
+this.amigos = new ReactiveVar('');
 });
 
 
 Template.profile.helpers({
   PUBLIC(){
     return POSTS.find({user:Template.instance().friend.get()}, {sort: [ ["date", "desc"] ] });
+  },
+   amigos(){
+    return Template.instance().amigos.get();
   }
 });
 
@@ -50,8 +54,9 @@ Template.profile.events({
   "click #buscador":function(e,template){
     e.preventDefault();
     var a=template.find('#search').value;
-    var e=Accounts.users.find({username: {$regex: a}}).fetch();
-    console.log(e);
+    var list=Accounts.users.find({username: {$regex: a}}).fetch();
+    template.amigos.set(list);
+    //console.log(list);
   //var r=$("#fotito").serializeObject();
       //POSTS.insert(r);
     }
