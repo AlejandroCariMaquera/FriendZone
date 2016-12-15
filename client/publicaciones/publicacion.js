@@ -7,7 +7,6 @@ Template.publicacion.helpers({
   URL(){
     return URL.get();
   },
-
   publicationCallback : function(){
     return {
         finished: function(index, fileInfo, templateContex){
@@ -18,9 +17,9 @@ Template.publicacion.helpers({
   }
 });
 Template.publicacion.events({
-	"click #btnsend":function(e){
-		e.preventDefault();
-		var r=$("#formpublic").serializeObject();
+  "click #btnsend":function(e){
+    e.preventDefault();
+    var r=$("#formpublic").serializeObject();
     if(r.text||r.images){
       POSTS.insert(r);
       $("#input").val("");
@@ -33,8 +32,8 @@ Template.publicacion.events({
     {
       alert("Debes introducir un estado o una imagen para poder PUBLICAR");
     }
-		console.log(r);
-	}
+    console.log(r);
+  }
 });
 //Codigo like dislike
 Template.item.onCreated(function helloOnCreated() {
@@ -49,15 +48,13 @@ Template.item.helpers({
   itemName(user){
     var usuario = Accounts.users.findOne({_id:user});
     return usuario.username+' '+usuario.profile.fullname;
+  },
+  showname(user){
+    var usuario = Accounts.users.findOne({_id:user});
+    return usuario.username+' '+usuario.profile.fullname;
   }
 });
-Template.item.events({
-  'click #like'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-    LIKE.insert(this);
-  },
-});
+ 
 
 Template.item.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -68,12 +65,13 @@ Template.item.helpers({
     return Template.instance().discounter.get();
   },
 });
+/*
 Template.item.events({
   'click #dislike'(event, instance) {
     // increment the counter when button is clicked
     instance.discounter.set(instance.discounter.get() + 1);
   },
-});
+});*/
 Template.publicacion.helpers({
   autor:function(){
     if(Accounts.user().profile.name!=undefined)
@@ -84,6 +82,7 @@ Template.publicacion.helpers({
     }
   }
 });
+
 //--->nombre a las publicaciones
 Template.item.helpers({
   texto:function(){
@@ -116,7 +115,35 @@ Template.item.events({
       var deletePublic = this._id;
       POSTS.remove({_id:deletePublic});
     }
-  }
+  }, 
+  "click .like_ui" :function(e, instance){
+      
+      //console.log(LIKES.find({idUser: Accounts.user()._id, idArt:this._id}).count());
+       instance.counter.set(instance.counter.get() + 1);
+      e.preventDefault();
+      var obj= {"idArt":this._id};
+      //this.countLikes++
+      //POSTS.update({_id:this._id},{$set:{countLikes:this.countLikes}});
+      LIKES.insert(obj); 
+      /* Meteor.call("addlike",this._id,function(error, result){
+          if(result){
+            alert("like insertado");
+          }
+       });*/
+  },
+  "click .nolike_ui":function(e){
+      e.preventDefault();
+      this.countLikes--;
+      var idlike= LIKES.findOne({"idArt":this._id, "idUser":Accounts.user()._id});
+      //POSTS.update({_id:this._id},{$set:{countLikes:this.countLikes}}); 
+      LIKES.remove(idlike._id);
+      /*Meteor.call("removelike",this._id,function(error, result){
+          if(result){
+            alert("ya no te gusta");
+          }
+       })*/   
+  } 
+
 });
 Template.item.helpers({
    dataProfile(user){
@@ -124,12 +151,21 @@ Template.item.helpers({
     var data = PERFIL.findOne({user:user});
     return data;
   },
+  ifLike(){
+    if( LIKES.find({idUser: Accounts.user()._id, idArt:this._id}).count()>0 )
+      return true;
+    return false;
+  },
+  countLikess(){
+    return LIKES.find({idArt:this._id}).count();
+  },
   ifVideo(file){
     if(file.slice(-3)=='mp4')
       return true;
     return false;
   }
 });
+
 Template.publicacion.helpers({
   ifVideo(file){
     if(file.slice(-3)=='mp4')
@@ -138,5 +174,3 @@ Template.publicacion.helpers({
   }
 });
 /////////
-
-
